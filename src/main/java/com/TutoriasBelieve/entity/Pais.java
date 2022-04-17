@@ -18,14 +18,13 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table (name="ubicaciones")
-public class Ubicacion implements Serializable{
-    
+@Table (name="paises")
+public class Pais implements Serializable{
     
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
-    private String ubicacion;
+    private String pais;
 
     public long getId() {
         return id;
@@ -35,14 +34,13 @@ public class Ubicacion implements Serializable{
         this.id = id;
     }
 
-    public String getUbicacion() {
-        return ubicacion;
+    public String getPais() {
+        return pais;
     }
 
-    public void setUbicacion(String ubicacion) {
-        this.ubicacion = ubicacion;
+    public void setPais(String pais) {
+        this.pais = pais;
     }
-    
     
     
 }

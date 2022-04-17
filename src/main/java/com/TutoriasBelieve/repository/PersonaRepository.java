@@ -4,16 +4,19 @@
  */
 package com.TutoriasBelieve.repository;
 
-import com.TutoriasBelieve.entity.Estudiante;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
-
 /**
  *
  * @author fabia
  */
 
+import com.TutoriasBelieve.entity.Persona;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+
 @Repository
-public interface EstudianteRepository extends CrudRepository<Estudiante,Long>{
+public interface PersonaRepository extends CrudRepository<Persona,Long>{
+    
+    Persona findByNombre (String nombre);
     
 }
