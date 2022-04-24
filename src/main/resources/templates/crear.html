@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+    
+    <head th:replace="plantilla/template::head"></head>
+    
+    
+    <body>
+        
+        <header th:replace="plantilla/template::header"></header>
+        
+        <h2>Datos de Clientes</h2>
+        <a th:href="@{/}">Regresar</a>
+        <br>
+            
+            <form th:action="@{/save}"
+                  method="post"
+                  th:object="${persona}">
+                
+                <input type="hidden" name="id" th:field="*{id}" />
+                
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" th:field="*{nombre}"/>
+                <br>
+                    
+                <label for="apellido1">Apellido 1:</label>
+                <input type="text" name="apellido1" th:field="*{apellido1}"/>
+                <br>
+                  
+                <label for="apellido2">Apellido 2:</label>
+                <input type="text" name="apellido2" th:field="*{apellido2}"/>
+                <br>
+                
+                <label for="email">Correo:</label>
+                <input type="email" name="email" th:field="*{email}"/>
+                <br>
+                    
+                <label for="telefono">Telefono:</label>
+                <input type="tel" name="telefono" th:field="*{telefono}"/>
+                <br>
+                    
+                <label for="paises">Pais:</label>
+                <select th:field="*{pais}">
+                    <option th:each="x:${paises}"
+                            th:value="${x.id}"
+                            th:text="${x.pais}" />
+                </select>
+
+                <br>
+                    
+                <input type="submit" name="Guardar" value="guardar"/>
+                
+            </form>
+        
+            <footer th:replace="plantilla/template::footer"></footer>
+            
+    </body>
+    
+</html>
